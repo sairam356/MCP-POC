@@ -1,47 +1,46 @@
-🚀 MCP-POC — GPT + Model Context Protocol (MCP) in Action
-This is a proof-of-concept implementation demonstrating how to use Model Context Protocol (MCP) with OpenAI function calling to build real-time LLM-native workflows.
+# 🚀 MCP-POC — GPT + Model Context Protocol (MCP) in Action
 
-🔥 What It Does
-Connects GPT-4 to backend tools via the MCP protocol
+This is a proof-of-concept implementation demonstrating how to use **Model Context Protocol (MCP)** with **OpenAI function calling** to build real-time LLM-native workflows.
 
-Lets GPT choose the right tool dynamically
+---
 
-Extracts required arguments automatically
+## 🔥 What It Does
 
-Calls backend logic securely using StdioClientTransport
+- Connects GPT-4 to backend tools via the MCP protocol
+- Lets GPT choose the right tool dynamically
+- Extracts required arguments automatically
+- Calls backend logic securely using `StdioClientTransport`
 
-💳 Example Use Case: Block a Credit Card
+---
+
+## 💳 Example Use Case: Block a Credit Card
+
 With just a natural language prompt:
 
-“Please block my card 1234567890123456 because it was stolen.”
+> “Please block my card 1234567890123456 because it was stolen.”
 
 ✅ GPT:
+- Selects the `blockCreditCard` tool
+- Extracts `cardNumber` and `reason`
+- Calls the backend tool via MCP
+- Returns a real-time response
 
-Selects the blockCreditCard tool
+---
 
-Extracts cardNumber and reason
+## 🛠 Tech Stack
 
-Calls the backend tool via MCP
+- 🔗 Model Context Protocol (MCP)
+- 🧠 OpenAI function calling (tool_choice: "auto")
+- ⚙️ TypeScript + Node.js
+- 📦 Zod schema for input validation
+- 🔄 Stdio transport for client/server connection
+- 🌱 Lightweight and easy to extend
 
-Returns a real-time response
+---
 
-🛠 Tech Stack
-🔗 Model Context Protocol (MCP)
+## 📁 Project Structure
 
-🧠 OpenAI function calling (tool_choice: "auto")
-
-⚙️ TypeScript + Node.js
-
-📦 Zod schema for input validation
-
-🔄 Stdio transport for client/server connection
-
-🌱 Lightweight and easy to extend
-
-📁 Project Structure
-graphql
-Copy
-Edit
+```
 src/
 ├── client/         # Smart OpenAI-powered client
 │   └── client.ts
@@ -50,55 +49,65 @@ src/
 .env                # Your OpenAI API key
 package.json
 tsconfig.json
-🧪 Getting Started
-Install dependencies
+```
 
-bash
-Copy
-Edit
+---
+
+## 🧪 Getting Started
+
+1. **Install dependencies**
+
+```bash
 npm install
-Set your OpenAI key
+```
 
-Create a .env file:
+2. **Set your OpenAI key**
 
-env
-Copy
-Edit
+Create a `.env` file:
+
+```env
 OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-Run the project
+```
+
+3. **Run the project**
 
 In one terminal:
 
-bash
-Copy
-Edit
+```bash
 npm run start:server
+```
+
 In another terminal:
 
-bash
-Copy
-Edit
+```bash
 npm run start:client
-Try a natural prompt
+```
 
-text
-Copy
-Edit
+4. **Try a natural prompt**
+
+```text
 Please block my credit card 1234567890123456 due to fraud
-📌 Highlights
-✅ No hardcoded logic or prompts
+```
 
-✅ Tool selection + argument extraction are automatic
+---
 
-✅ Works with .ts, .js, or .py server tools
+## 📌 Highlights
 
-✅ Protocol-driven, agent-ready foundation
+- ✅ No hardcoded logic or prompts
+- ✅ Tool selection + argument extraction are automatic
+- ✅ Works with `.ts`, `.js`, or `.py` server tools
+- ✅ Protocol-driven, agent-ready foundation
 
-📎 Related
-🔗 Model Context Protocol Docs
+---
 
-📘 OpenAI Tool Calling
+## 📎 Related
 
-🙌 Author
-Built by Venkata Sairam Gollamudi
-📬 vsairamtech@gmail.com
+- 🔗 [Model Context Protocol Docs](https://modelcontextprotocol.io/)
+- 📘 [OpenAI Tool Calling](https://platform.openai.com/docs/guides/function-calling)
+
+---
+
+## 🙌 Author
+
+Built by [Venkata Sairam Gollamudi](https://github.com/sairam356)  
+📬 [vsairamtech@gmail.com](mailto:vsairamtech@gmail.com)
